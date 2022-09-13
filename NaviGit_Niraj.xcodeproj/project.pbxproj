@@ -16,6 +16,10 @@
 		2C3F327428CF920400E8AC44 /* NaviGit_NirajTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F327328CF920400E8AC44 /* NaviGit_NirajTests.swift */; };
 		2C3F327E28CF920400E8AC44 /* NaviGit_NirajUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F327D28CF920400E8AC44 /* NaviGit_NirajUITests.swift */; };
 		2C3F328028CF920400E8AC44 /* NaviGit_NirajUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F327F28CF920400E8AC44 /* NaviGit_NirajUITestsLaunchTests.swift */; };
+		2C3F329128CF940700E8AC44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F329028CF940700E8AC44 /* Coordinator.swift */; };
+		2C3F329428CF951500E8AC44 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F329328CF951500E8AC44 /* ApplicationCoordinator.swift */; };
+		2C3F329728CF9C3A00E8AC44 /* PRListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F329628CF9C3A00E8AC44 /* PRListCoordinator.swift */; };
+		2C3F329A28CF9C5D00E8AC44 /* PRListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F329928CF9C5D00E8AC44 /* PRListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		2C3F327928CF920400E8AC44 /* NaviGit_NirajUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaviGit_NirajUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3F327D28CF920400E8AC44 /* NaviGit_NirajUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviGit_NirajUITests.swift; sourceTree = "<group>"; };
 		2C3F327F28CF920400E8AC44 /* NaviGit_NirajUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviGit_NirajUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2C3F329028CF940700E8AC44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2C3F329328CF951500E8AC44 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		2C3F329628CF9C3A00E8AC44 /* PRListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListCoordinator.swift; sourceTree = "<group>"; };
+		2C3F329928CF9C5D00E8AC44 /* PRListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +107,9 @@
 		2C3F325B28CF920300E8AC44 /* NaviGit_Niraj */ = {
 			isa = PBXGroup;
 			children = (
-				2C3F325C28CF920300E8AC44 /* AppDelegate.swift */,
-				2C3F325E28CF920300E8AC44 /* SceneDelegate.swift */,
+				2C3F329228CF949E00E8AC44 /* AppDelegate */,
+				2C3F328D28CF930D00E8AC44 /* Module */,
+				2C3F328C28CF930400E8AC44 /* Common */,
 				2C3F326028CF920300E8AC44 /* ViewController.swift */,
 				2C3F326228CF920300E8AC44 /* Main.storyboard */,
 				2C3F326528CF920400E8AC44 /* Assets.xcassets */,
@@ -125,6 +134,65 @@
 				2C3F327F28CF920400E8AC44 /* NaviGit_NirajUITestsLaunchTests.swift */,
 			);
 			path = NaviGit_NirajUITests;
+			sourceTree = "<group>";
+		};
+		2C3F328C28CF930400E8AC44 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F329028CF940700E8AC44 /* Coordinator.swift */,
+				2C3F329328CF951500E8AC44 /* ApplicationCoordinator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2C3F328D28CF930D00E8AC44 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F328F28CF937D00E8AC44 /* PullRequest */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		2C3F328F28CF937D00E8AC44 /* PullRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F329B28CF9C6300E8AC44 /* ViewModel */,
+				2C3F329828CF9C4200E8AC44 /* Controller */,
+				2C3F329528CF9B2200E8AC44 /* Coordinator */,
+			);
+			path = PullRequest;
+			sourceTree = "<group>";
+		};
+		2C3F329228CF949E00E8AC44 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F325E28CF920300E8AC44 /* SceneDelegate.swift */,
+				2C3F325C28CF920300E8AC44 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2C3F329528CF9B2200E8AC44 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F329628CF9C3A00E8AC44 /* PRListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2C3F329828CF9C4200E8AC44 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F329928CF9C5D00E8AC44 /* PRListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2C3F329B28CF9C6300E8AC44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3F329428CF951500E8AC44 /* ApplicationCoordinator.swift in Sources */,
+				2C3F329128CF940700E8AC44 /* Coordinator.swift in Sources */,
 				2C3F326128CF920300E8AC44 /* ViewController.swift in Sources */,
 				2C3F325D28CF920300E8AC44 /* AppDelegate.swift in Sources */,
+				2C3F329A28CF9C5D00E8AC44 /* PRListViewController.swift in Sources */,
+				2C3F329728CF9C3A00E8AC44 /* PRListCoordinator.swift in Sources */,
 				2C3F325F28CF920300E8AC44 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,10 +23,12 @@
 		2CF3D9CB28D62224003D205C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3D9CA28D62224003D205C /* NetworkManager.swift */; };
 		2CF3D9CD28D62230003D205C /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3D9CC28D62230003D205C /* NetworkingProtocols.swift */; };
 		2CF3D9CF28D6223B003D205C /* JSONKeyDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3D9CE28D6223B003D205C /* JSONKeyDecoder.swift */; };
+		D83329DD28E4DBE500A5B14F /* PRListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83329DC28E4DBE500A5B14F /* PRListViewModel.swift */; };
 		D88F69DB28E0D4AA0039B9BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69DA28E0D4AA0039B9BC /* Constants.swift */; };
 		D88F69DE28E0E3EF0039B9BC /* PRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69DD28E0E3EF0039B9BC /* PRRequest.swift */; };
 		D88F69E028E0E4600039B9BC /* PRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69DF28E0E4600039B9BC /* PRService.swift */; };
 		D88F69E328E0E4DF0039B9BC /* PRResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69E228E0E4DF0039B9BC /* PRResponseModel.swift */; };
+		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +69,12 @@
 		2CF3D9CA28D62224003D205C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2CF3D9CC28D62230003D205C /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
 		2CF3D9CE28D6223B003D205C /* JSONKeyDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONKeyDecoder.swift; sourceTree = "<group>"; };
+		D83329DC28E4DBE500A5B14F /* PRListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListViewModel.swift; sourceTree = "<group>"; };
 		D88F69DA28E0D4AA0039B9BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D88F69DD28E0E3EF0039B9BC /* PRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRRequest.swift; sourceTree = "<group>"; };
 		D88F69DF28E0E4600039B9BC /* PRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRService.swift; sourceTree = "<group>"; };
 		D88F69E228E0E4DF0039B9BC /* PRResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRResponseModel.swift; sourceTree = "<group>"; };
+		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		2C3F325B28CF920300E8AC44 /* NaviGit_Niraj */ = {
 			isa = PBXGroup;
 			children = (
+				D8D8463C28EA0DE000992256 /* Extensions */,
 				2CF3D9C528D621DD003D205C /* Networking */,
 				2C3F329228CF949E00E8AC44 /* AppDelegate */,
 				2C3F328D28CF930D00E8AC44 /* Module */,
@@ -170,6 +175,7 @@
 		2C3F328F28CF937D00E8AC44 /* PullRequest */ = {
 			isa = PBXGroup;
 			children = (
+				D83329DB28E4DBD200A5B14F /* ViewModel */,
 				D88F69E128E0E4CA0039B9BC /* Model */,
 				D88F69DC28E0E3CC0039B9BC /* Service */,
 				2C3F329828CF9C4200E8AC44 /* Controller */,
@@ -215,6 +221,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		D83329DB28E4DBD200A5B14F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D83329DC28E4DBE500A5B14F /* PRListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D88F69DC28E0E3CC0039B9BC /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +244,14 @@
 				D88F69E228E0E4DF0039B9BC /* PRResponseModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D8D8463C28EA0DE000992256 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,10 +390,12 @@
 				2C3F325D28CF920300E8AC44 /* AppDelegate.swift in Sources */,
 				2C3F329A28CF9C5D00E8AC44 /* PRListViewController.swift in Sources */,
 				D88F69E328E0E4DF0039B9BC /* PRResponseModel.swift in Sources */,
+				D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */,
 				2C3F329728CF9C3A00E8AC44 /* PRListCoordinator.swift in Sources */,
 				2C3F325F28CF920300E8AC44 /* SceneDelegate.swift in Sources */,
 				2CF3D9CF28D6223B003D205C /* JSONKeyDecoder.swift in Sources */,
 				2CF3D9C728D621F8003D205C /* APIEndpoint.swift in Sources */,
+				D83329DD28E4DBE500A5B14F /* PRListViewModel.swift in Sources */,
 				D88F69E028E0E4600039B9BC /* PRService.swift in Sources */,
 				2CF3D9C928D6220D003D205C /* APIError.swift in Sources */,
 				D88F69DE28E0E3EF0039B9BC /* PRRequest.swift in Sources */,

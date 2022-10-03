@@ -26,7 +26,8 @@ struct PullRequestAPIData {
     init(category: PRCategory,
          owner: String,
          repo: String,
-         perPage: Int = 100) {
+         perPage: Int = 100
+    ) {
         self.category = category
         self.owner = owner
         self.repo = repo

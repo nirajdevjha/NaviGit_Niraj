@@ -33,6 +33,8 @@
 		D8A67BB328F31C1900B2D28D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB228F31C1900B2D28D /* String+Extensions.swift */; };
 		D8A67BB528F34E8000B2D28D /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */; };
 		D8A67BB728F357F500B2D28D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */; };
+		D8A67BB928F35CD200B2D28D /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */; };
+		D8A67BBB28F35D0600B2D28D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */; };
 		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		D8A67BB228F31C1900B2D28D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +174,7 @@
 				2C3F329028CF940700E8AC44 /* Coordinator.swift */,
 				2C3F329328CF951500E8AC44 /* ApplicationCoordinator.swift */,
 				D88F69DA28E0D4AA0039B9BC /* Constants.swift */,
+				D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A67BAE28F2A60100B2D28D /* PRTableViewCell.swift */,
+				D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				D8A67BB528F34E8000B2D28D /* Collection+Extensions.swift in Sources */,
 				2C3F329128CF940700E8AC44 /* Coordinator.swift in Sources */,
 				2CF3D9CB28D62224003D205C /* NetworkManager.swift in Sources */,
+				D8A67BB928F35CD200B2D28D /* LoadingTableViewCell.swift in Sources */,
 				D8A67BB128F3052F00B2D28D /* PRListCellViewModel.swift in Sources */,
 				2C3F325D28CF920300E8AC44 /* AppDelegate.swift in Sources */,
 				2C3F329A28CF9C5D00E8AC44 /* PRListViewController.swift in Sources */,
@@ -422,6 +429,7 @@
 				D8A67BAF28F2A60100B2D28D /* PRTableViewCell.swift in Sources */,
 				2CF3D9CF28D6223B003D205C /* JSONKeyDecoder.swift in Sources */,
 				2CF3D9C728D621F8003D205C /* APIEndpoint.swift in Sources */,
+				D8A67BBB28F35D0600B2D28D /* BaseTableViewCell.swift in Sources */,
 				D83329DD28E4DBE500A5B14F /* PRListViewModel.swift in Sources */,
 				D88F69E028E0E4600039B9BC /* PRService.swift in Sources */,
 				2CF3D9C928D6220D003D205C /* APIError.swift in Sources */,

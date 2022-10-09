@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PRTableViewCell: UITableViewCell {
+final class PRTableViewCell: BaseTableViewCell {
 
     private let contentStackView: UIStackView = {
         let stackView = UIStackView().disableAutoResize()
@@ -72,17 +72,8 @@ final class PRTableViewCell: UITableViewCell {
         return String(describing: self)
     }
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialSetup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initialSetup()
-    }
-
-    private func initialSetup() {
+    override func initialSetup() {
+        super.initialSetup()
         selectionStyle = .none
         contentView.addSubview(contentStackView)
         NSLayoutConstraint.activate([

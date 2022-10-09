@@ -8,12 +8,6 @@
 import UIKit
 
 class PRListViewController: UIViewController {
-    private let repoHeaderLabel: UILabel = {
-        let label = UILabel().disableAutoResize()
-        label.textAlignment = .center
-        label.textColor = .darkGray
-        return label
-    }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView().disableAutoResize()
@@ -21,7 +15,7 @@ class PRListViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
-        tableView.separatorStyle = .none
+        tableView.register(PRTableViewCell.self, forCellReuseIdentifier: PRTableViewCell.reuseIdentifier)
         return tableView
     }()
 
@@ -30,24 +24,33 @@ class PRListViewController: UIViewController {
         return loader
     }()
 
+    private var viewModel: PRListViewModelProtocol
+
+    init(viewModel: PRListViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         view.backgroundColor = .white
         setupViews()
+        viewModel.getPRList()
     }
 
     private func setupViews() {
+        title = "Pull Requests"
         view.addSubviews(
-            repoHeaderLabel,
             tableView,
             loader
         )
         NSLayoutConstraint.activate([
-            repoHeaderLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            repoHeaderLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            repoHeaderLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
-            tableView.topAnchor.constraint(equalTo: repoHeaderLabel.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -60,10 +63,41 @@ class PRListViewController: UIViewController {
 
 extension PRListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfRows(in: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cellViewModel = viewModel.getCellViewModel(at: indexPath.row) as? PRListCellViewModel {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PRTableViewCell.reuseIdentifier, for: indexPath) as! PRTableViewCell
+            cell.configure(from: cellViewModel)
+            return cell
+        }
         return UITableViewCell()
+    }
+}
+
+extension PRListViewController: PRListViewModelDelegate {
+    func showLoader() {
+        DispatchQueue.main.async {
+            self.loader.startAnimating()
+        }
+    }
+
+    func hideLoader() {
+        DispatchQueue.main.async {
+            self.loader.stopAnimating()
+        }
+    }
+
+    func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
+    func showError(message: String) {
+        DispatchQueue.main.async {
+
+        }
     }
 }

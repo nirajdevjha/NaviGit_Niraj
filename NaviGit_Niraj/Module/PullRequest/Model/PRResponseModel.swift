@@ -9,7 +9,7 @@ import Foundation
 
  struct PullRequest: Decodable {
      let title: String
-     let createdAt: String
+     let createdAt: String?
      let closedAt: String?
      let user: UserInfo?
  }

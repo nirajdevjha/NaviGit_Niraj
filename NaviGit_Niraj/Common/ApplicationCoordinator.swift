@@ -22,15 +22,15 @@ final class ApplicationCoordinator: Coordinator {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-            appearance.backgroundColor = .white
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = .appColor
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {
             rootViewController.navigationBar.tintColor = .white
-            rootViewController.navigationBar.barTintColor = .black
+            rootViewController.navigationBar.barTintColor = .appColor
             rootViewController.navigationBar.titleTextAttributes = [
-                NSAttributedString.Key.foregroundColor: UIColor.black
+                NSAttributedString.Key.foregroundColor: UIColor.white
             ]
         }
         prListCoordinator = PRListCoordinator(presenter: rootViewController)

@@ -16,7 +16,10 @@ final class PRListCoordinator: Coordinator {
     }
 
     func start() {
-        let prListVC = PRListViewController()
+        let networkManager: NetworkManagerProtocol = NetworkManager()
+        let prService: PRServiceProvider = PRService(networkManager: networkManager)
+        let viewModel: PRListViewModelProtocol = PRListViewModel(service: prService)
+        let prListVC = PRListViewController(viewModel: viewModel)
         self.prListVC = prListVC
         presenter?.pushViewController(prListVC, animated: true)
     }

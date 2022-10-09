@@ -51,7 +51,7 @@ struct PRRequest: NetworkRequestData {
     }
 
     var endPoint: String {
-        return "/\(APIEndPoint.pullRequests.path)/\(requestData.owner)/\(requestData.repo))/pulls"
+        return "\(APIEndPoint.pullRequests.path)/\(requestData.owner)/\(requestData.repo)/pulls"
     }
 
     var parameters: [URLQueryItem] {

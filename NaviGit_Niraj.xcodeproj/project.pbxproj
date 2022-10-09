@@ -28,6 +28,11 @@
 		D88F69DE28E0E3EF0039B9BC /* PRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69DD28E0E3EF0039B9BC /* PRRequest.swift */; };
 		D88F69E028E0E4600039B9BC /* PRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69DF28E0E4600039B9BC /* PRService.swift */; };
 		D88F69E328E0E4DF0039B9BC /* PRResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F69E228E0E4DF0039B9BC /* PRResponseModel.swift */; };
+		D8A67BAF28F2A60100B2D28D /* PRTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BAE28F2A60100B2D28D /* PRTableViewCell.swift */; };
+		D8A67BB128F3052F00B2D28D /* PRListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB028F3052F00B2D28D /* PRListCellViewModel.swift */; };
+		D8A67BB328F31C1900B2D28D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB228F31C1900B2D28D /* String+Extensions.swift */; };
+		D8A67BB528F34E8000B2D28D /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */; };
+		D8A67BB728F357F500B2D28D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */; };
 		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +79,11 @@
 		D88F69DD28E0E3EF0039B9BC /* PRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRRequest.swift; sourceTree = "<group>"; };
 		D88F69DF28E0E4600039B9BC /* PRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRService.swift; sourceTree = "<group>"; };
 		D88F69E228E0E4DF0039B9BC /* PRResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRResponseModel.swift; sourceTree = "<group>"; };
+		D8A67BAE28F2A60100B2D28D /* PRTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTableViewCell.swift; sourceTree = "<group>"; };
+		D8A67BB028F3052F00B2D28D /* PRListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListCellViewModel.swift; sourceTree = "<group>"; };
+		D8A67BB228F31C1900B2D28D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +185,7 @@
 		2C3F328F28CF937D00E8AC44 /* PullRequest */ = {
 			isa = PBXGroup;
 			children = (
+				D8A67BAD28F2A5CB00B2D28D /* Views */,
 				D83329DB28E4DBD200A5B14F /* ViewModel */,
 				D88F69E128E0E4CA0039B9BC /* Model */,
 				D88F69DC28E0E3CC0039B9BC /* Service */,
@@ -225,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				D83329DC28E4DBE500A5B14F /* PRListViewModel.swift */,
+				D8A67BB028F3052F00B2D28D /* PRListCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,10 +258,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D8A67BAD28F2A5CB00B2D28D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8A67BAE28F2A60100B2D28D /* PRTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D8D8463C28EA0DE000992256 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */,
+				D8A67BB228F31C1900B2D28D /* String+Extensions.swift */,
+				D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */,
+				D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,21 +407,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A67BB328F31C1900B2D28D /* String+Extensions.swift in Sources */,
 				2C3F329428CF951500E8AC44 /* ApplicationCoordinator.swift in Sources */,
+				D8A67BB528F34E8000B2D28D /* Collection+Extensions.swift in Sources */,
 				2C3F329128CF940700E8AC44 /* Coordinator.swift in Sources */,
 				2CF3D9CB28D62224003D205C /* NetworkManager.swift in Sources */,
+				D8A67BB128F3052F00B2D28D /* PRListCellViewModel.swift in Sources */,
 				2C3F325D28CF920300E8AC44 /* AppDelegate.swift in Sources */,
 				2C3F329A28CF9C5D00E8AC44 /* PRListViewController.swift in Sources */,
 				D88F69E328E0E4DF0039B9BC /* PRResponseModel.swift in Sources */,
 				D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */,
 				2C3F329728CF9C3A00E8AC44 /* PRListCoordinator.swift in Sources */,
 				2C3F325F28CF920300E8AC44 /* SceneDelegate.swift in Sources */,
+				D8A67BAF28F2A60100B2D28D /* PRTableViewCell.swift in Sources */,
 				2CF3D9CF28D6223B003D205C /* JSONKeyDecoder.swift in Sources */,
 				2CF3D9C728D621F8003D205C /* APIEndpoint.swift in Sources */,
 				D83329DD28E4DBE500A5B14F /* PRListViewModel.swift in Sources */,
 				D88F69E028E0E4600039B9BC /* PRService.swift in Sources */,
 				2CF3D9C928D6220D003D205C /* APIError.swift in Sources */,
 				D88F69DE28E0E3EF0039B9BC /* PRRequest.swift in Sources */,
+				D8A67BB728F357F500B2D28D /* UIColor+Extensions.swift in Sources */,
 				2CF3D9CD28D62230003D205C /* NetworkingProtocols.swift in Sources */,
 				D88F69DB28E0D4AA0039B9BC /* Constants.swift in Sources */,
 			);

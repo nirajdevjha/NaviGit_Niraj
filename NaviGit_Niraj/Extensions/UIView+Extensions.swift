@@ -21,6 +21,16 @@ extension UIView {
     func addSubviews(_ views: UIView...) {
         views.forEach { addSubview($0) }
     }
+
+    var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
+        set(newRadius) {
+            self.layer.cornerRadius = newRadius
+            self.layer.masksToBounds = newRadius > 0
+        }
+    }
 }
 
 extension UIStackView {

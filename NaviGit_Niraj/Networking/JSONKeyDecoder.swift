@@ -11,6 +11,7 @@ struct JSONKeyDecoder: JSONDecodeProvider {
 
     func decode<T: Decodable>(data: Data) throws -> T {
         let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         return try jsonDecoder.decode(T.self, from: data)
     }
 }

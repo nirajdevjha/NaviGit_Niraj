@@ -12,19 +12,23 @@ protocol PRListViewModelProtocol {
     func getPRList()
     func numberOfRows(in section: Int) -> Int
     func getCellViewModel(at index: Int) -> PRListCellViewModelProtocol?
+    func isLoadingCellIndexPath(_ indexPath: IndexPath) -> Bool
+    func incrementCurrentPage()
 }
 
 protocol PRListViewModelDelegate: AnyObject {
     func showLoader()
     func hideLoader()
     func reloadTable()
-    func showError(message: String)
+    func showError(title: String, message: String)
 }
 
 final class PRListViewModel: PRListViewModelProtocol {
     private let service: PRServiceProvider
     weak var delegate: PRListViewModelDelegate?
 
+    private(set) var shouldShowLoadingCell: Bool = false
+    private(set) var currentPage: Int = 1
     private var prCellViewModels: [PRListCellViewModelProtocol] = []
 
     init(service: PRServiceProvider) {
@@ -32,17 +36,22 @@ final class PRListViewModel: PRListViewModelProtocol {
     }
 
     private func preparePRCellViewModels(prList: [PullRequest]) {
-        prCellViewModels.removeAll()
+        guard !prList.isEmpty else {
+            prCellViewModels.removeAll()
+            //ERROR
+            return
+        }
 
         for pr in prList {
             let prCellViewModel = PRListCellViewModel(prInfo: pr)
             prCellViewModels.append(prCellViewModel)
         }
+        shouldShowLoadingCell = currentPage < 10
     }
 
     func getPRList() {
         self.delegate?.showLoader()
-        let request = PullRequestAPIData(category: .closed, owner: "Apple", repo: "Swift")
+        let request = PullRequestAPIData(category: .closed, owner: "Apple", repo: "Swift", page: currentPage)
         service.fetchPullRequests(requestData: request) { [weak self] result in
             guard let self = self else { return }
             self.delegate?.hideLoader()
@@ -51,6 +60,7 @@ final class PRListViewModel: PRListViewModelProtocol {
                 self.preparePRCellViewModels(prList: prList)
                 self.delegate?.reloadTable()
             case .failure(let error):
+                self.shouldShowLoadingCell = false
                 break
             }
         }
@@ -64,5 +74,14 @@ final class PRListViewModel: PRListViewModelProtocol {
     func getCellViewModel(at index: Int) -> PRListCellViewModelProtocol? {
         let cellViewModel = prCellViewModels[safe: index]
         return cellViewModel
+    }
+
+    func isLoadingCellIndexPath(_ indexPath: IndexPath) -> Bool {
+        guard shouldShowLoadingCell else { return false }
+        return indexPath.row == self.prCellViewModels.count - 1
+    }
+
+    func incrementCurrentPage() {
+        self.currentPage += 1
     }
 }

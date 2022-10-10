@@ -22,16 +22,19 @@ struct PullRequestAPIData {
     let owner: String
     let repo: String
     let perPage: Int
+    let page: Int
 
     init(category: PRCategory,
          owner: String,
          repo: String,
-         perPage: Int = 100
+         perPage: Int = 20,
+         page: Int
     ) {
         self.category = category
         self.owner = owner
         self.repo = repo
         self.perPage = perPage
+        self.page = page
     }
 }
 
@@ -58,6 +61,7 @@ struct PRRequest: NetworkRequestData {
         var parameters = APIEndPoint.pullRequests.parameters
         parameters.append(URLQueryItem(name: "state", value: "\(requestData.category.rawValue)"))
         parameters.append(URLQueryItem(name: "per_page", value: "\(requestData.perPage)"))
+        parameters.append(URLQueryItem(name: "page", value: "\(requestData.page)"))
         return parameters
     }
 

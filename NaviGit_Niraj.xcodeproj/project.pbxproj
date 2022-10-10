@@ -35,6 +35,7 @@
 		D8A67BB728F357F500B2D28D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */; };
 		D8A67BB928F35CD200B2D28D /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */; };
 		D8A67BBB28F35D0600B2D28D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */; };
+		D8A67BBD28F3CD0B00B2D28D /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BBC28F3CD0B00B2D28D /* UIAlertController+Extensions.swift */; };
 		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D8A67BBC28F3CD0B00B2D28D /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,6 +281,7 @@
 				D8A67BB228F31C1900B2D28D /* String+Extensions.swift */,
 				D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */,
 				D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */,
+				D8A67BBC28F3CD0B00B2D28D /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				D8A67BB528F34E8000B2D28D /* Collection+Extensions.swift in Sources */,
 				2C3F329128CF940700E8AC44 /* Coordinator.swift in Sources */,
 				2CF3D9CB28D62224003D205C /* NetworkManager.swift in Sources */,
+				D8A67BBD28F3CD0B00B2D28D /* UIAlertController+Extensions.swift in Sources */,
 				D8A67BB928F35CD200B2D28D /* LoadingTableViewCell.swift in Sources */,
 				D8A67BB128F3052F00B2D28D /* PRListCellViewModel.swift in Sources */,
 				2C3F325D28CF920300E8AC44 /* AppDelegate.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoaderCell: BaseTableViewCell {
+final class LoadingTableViewCell: BaseTableViewCell {
 
     private lazy var loader: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView().disableAutoResize()
@@ -18,7 +18,7 @@ final class LoaderCell: BaseTableViewCell {
 
     private lazy var loadingLabel: UILabel = {
         let label = UILabel().disableAutoResize()
-        label.textColor = UIColor.darkGrayTxtColor
+        label.textColor = .lightGray
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textAlignment = .center
         return label

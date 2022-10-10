@@ -16,6 +16,7 @@ class PRListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
         tableView.register(PRTableViewCell.self, forCellReuseIdentifier: PRTableViewCell.reuseIdentifier)
+        tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
         return tableView
     }()
 
@@ -61,21 +62,44 @@ class PRListViewController: UIViewController {
     }
 }
 
+//MARK:- Table view Delegate and Datasource
 extension PRListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows(in: section)
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard viewModel.isLoadingCellIndexPath(indexPath) else {
+            return
+        }
+
+        viewModel.incrementCurrentPage()
+        viewModel.getPRList()
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cellViewModel = viewModel.getCellViewModel(at: indexPath.row) as? PRListCellViewModel {
-            let cell = tableView.dequeueReusableCell(withIdentifier: PRTableViewCell.reuseIdentifier, for: indexPath) as! PRTableViewCell
-            cell.configure(from: cellViewModel)
+
+        if viewModel.isLoadingCellIndexPath(indexPath) {
+            let cell: LoadingTableViewCell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reuseIdentifier, for: indexPath) as! LoadingTableViewCell
+            cell.startLaoding(with: "Loading...")
             return cell
+        }
+
+        if let cellViewModel = viewModel.getCellViewModel(at: indexPath.row) {
+            switch cellViewModel.rowType {
+            case .prDetails:
+                if let cellViewModel = cellViewModel as? PRListCellViewModel {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: PRTableViewCell.reuseIdentifier, for: indexPath) as! PRTableViewCell
+                    cell.configure(from: cellViewModel)
+                    return cell
+                }
+            }
         }
         return UITableViewCell()
     }
 }
 
+//MARK:- PRListViewModelDelegate
 extension PRListViewController: PRListViewModelDelegate {
     func showLoader() {
         DispatchQueue.main.async {
@@ -95,9 +119,9 @@ extension PRListViewController: PRListViewModelDelegate {
         }
     }
 
-    func showError(message: String) {
+    func showError(title: String, message: String) {
         DispatchQueue.main.async {
-
+            UIAlertController.showAlert(from: self, title: title, message: message)
         }
     }
 }

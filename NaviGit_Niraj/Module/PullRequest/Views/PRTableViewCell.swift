@@ -85,8 +85,6 @@ final class PRTableViewCell: BaseTableViewCell {
             avtarImageView.heightAnchor.constraint(equalToConstant: 40),
         ])
 
-        avtarImageView.cornerRadius = avtarImageView.frame.size.height / 2
-
         contentStackView.addArrangedSubviews(
             titleLabel,
             userStackView,
@@ -102,14 +100,18 @@ final class PRTableViewCell: BaseTableViewCell {
         )
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        avtarImageView.cornerRadius = avtarImageView.frame.size.height / 2
+    }
+
     func configure(from model: PRListCellViewModel) {
         userNameLabel.text = model.userName
         createdDateLabel.text = "Created: " + (model.createdDate ?? "")
         closedDateLabel.text = "Closed: " + (model.closedDate ?? "")
         titleLabel.text = model.title
-
-        if let imageURL = model.avtarUrl {
-
+        if let avtarUrl = model.avtarUrl {
+            avtarImageView.load(url: avtarUrl, placeholder: UIImage(named: "avatar_placeholder"))
         }
     }
 }

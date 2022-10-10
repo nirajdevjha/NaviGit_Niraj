@@ -46,12 +46,16 @@ final class PRListViewModel: PRListViewModelProtocol {
             let prCellViewModel = PRListCellViewModel(prInfo: pr)
             prCellViewModels.append(prCellViewModel)
         }
-        shouldShowLoadingCell = currentPage < 10
+        //This can be improved for infinite pagination
+        shouldShowLoadingCell = currentPage < 15
     }
 
     func getPRList() {
-        self.delegate?.showLoader()
-        let request = PullRequestAPIData(category: .closed, owner: "Apple", repo: "Swift", page: currentPage)
+
+        let request = PullRequestAPIData(category: .closed, owner: "apple", repo: "swift", page: currentPage)
+        if currentPage == 1 {
+            delegate?.showLoader()
+        }
         service.fetchPullRequests(requestData: request) { [weak self] result in
             guard let self = self else { return }
             self.delegate?.hideLoader()
@@ -60,6 +64,7 @@ final class PRListViewModel: PRListViewModelProtocol {
                 self.preparePRCellViewModels(prList: prList)
                 self.delegate?.reloadTable()
             case .failure(let error):
+                self.delegate?.showError(title: "Error", message: "")
                 self.shouldShowLoadingCell = false
                 break
             }

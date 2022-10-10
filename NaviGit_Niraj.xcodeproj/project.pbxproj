@@ -36,6 +36,8 @@
 		D8A67BB928F35CD200B2D28D /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */; };
 		D8A67BBB28F35D0600B2D28D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */; };
 		D8A67BBD28F3CD0B00B2D28D /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A67BBC28F3CD0B00B2D28D /* UIAlertController+Extensions.swift */; };
+		D8C8717128F3E22C0096029B /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8717028F3E22C0096029B /* ImageDownloader.swift */; };
+		D8C8717328F3E3760096029B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8717228F3E3760096029B /* UIImage+Extensions.swift */; };
 		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		D8A67BB828F35CD200B2D28D /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D8A67BBC28F3CD0B00B2D28D /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		D8C8717028F3E22C0096029B /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		D8C8717228F3E3760096029B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +181,7 @@
 				2C3F329328CF951500E8AC44 /* ApplicationCoordinator.swift */,
 				D88F69DA28E0D4AA0039B9BC /* Constants.swift */,
 				D8A67BBA28F35D0600B2D28D /* BaseTableViewCell.swift */,
+				D8C8717028F3E22C0096029B /* ImageDownloader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				D8A67BB428F34E8000B2D28D /* Collection+Extensions.swift */,
 				D8A67BB628F357F500B2D28D /* UIColor+Extensions.swift */,
 				D8A67BBC28F3CD0B00B2D28D /* UIAlertController+Extensions.swift */,
+				D8C8717228F3E3760096029B /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 			files = (
 				D8A67BB328F31C1900B2D28D /* String+Extensions.swift in Sources */,
 				2C3F329428CF951500E8AC44 /* ApplicationCoordinator.swift in Sources */,
+				D8C8717128F3E22C0096029B /* ImageDownloader.swift in Sources */,
 				D8A67BB528F34E8000B2D28D /* Collection+Extensions.swift in Sources */,
 				2C3F329128CF940700E8AC44 /* Coordinator.swift in Sources */,
 				2CF3D9CB28D62224003D205C /* NetworkManager.swift in Sources */,
@@ -439,6 +446,7 @@
 				2CF3D9C928D6220D003D205C /* APIError.swift in Sources */,
 				D88F69DE28E0E3EF0039B9BC /* PRRequest.swift in Sources */,
 				D8A67BB728F357F500B2D28D /* UIColor+Extensions.swift in Sources */,
+				D8C8717328F3E3760096029B /* UIImage+Extensions.swift in Sources */,
 				2CF3D9CD28D62230003D205C /* NetworkingProtocols.swift in Sources */,
 				D88F69DB28E0D4AA0039B9BC /* Constants.swift in Sources */,
 			);

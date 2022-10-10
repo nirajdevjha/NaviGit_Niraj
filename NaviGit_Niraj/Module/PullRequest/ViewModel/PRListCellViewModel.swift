@@ -29,7 +29,7 @@ struct PRListCellViewModel: PRListCellViewModelProtocol {
         self.createdDate = prInfo.createdAt?.date
         self.closedDate = prInfo.closedAt?.date
 
-        if let urlStr = prInfo.user?.avatarURL,
+        if let urlStr = prInfo.user?.avatarUrl,
            let avtarUrl = URL(string: urlStr) {
             self.avtarUrl = avtarUrl
         } else {

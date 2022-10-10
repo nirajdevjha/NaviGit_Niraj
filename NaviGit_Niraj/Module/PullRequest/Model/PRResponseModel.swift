@@ -14,7 +14,7 @@ import Foundation
      let user: UserInfo?
  }
 
- struct UserInfo: Decodable, Equatable {
+ struct UserInfo: Decodable {
      let login: String
-     let avatarURL: String?
+     let avatarUrl: String?
  }

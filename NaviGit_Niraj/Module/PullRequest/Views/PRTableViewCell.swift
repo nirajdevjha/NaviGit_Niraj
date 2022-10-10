@@ -107,8 +107,8 @@ final class PRTableViewCell: BaseTableViewCell {
 
     func configure(from model: PRListCellViewModel) {
         userNameLabel.text = model.userName
-        createdDateLabel.text = "Created: " + (model.createdDate ?? "")
-        closedDateLabel.text = "Closed: " + (model.closedDate ?? "")
+        createdDateLabel.text = model.createdDate
+        closedDateLabel.text = model.closedDate
         titleLabel.text = model.title
         if let avtarUrl = model.avtarUrl {
             avtarImageView.load(url: avtarUrl, placeholder: UIImage(named: "avatar_placeholder"))

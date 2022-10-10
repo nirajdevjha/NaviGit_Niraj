@@ -26,8 +26,8 @@ struct PRListCellViewModel: PRListCellViewModelProtocol {
     init(prInfo: PullRequest) {
         self.title = prInfo.title
         self.userName = prInfo.user?.login
-        self.createdDate = prInfo.createdAt?.date
-        self.closedDate = prInfo.closedAt?.date
+        self.createdDate = "Created: " + (prInfo.createdAt?.date ?? "")
+        self.closedDate = "Closed: " + (prInfo.closedAt?.date ?? "")
 
         if let urlStr = prInfo.user?.avatarUrl,
            let avtarUrl = URL(string: urlStr) {

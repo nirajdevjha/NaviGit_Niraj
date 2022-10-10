@@ -64,9 +64,8 @@ final class PRListViewModel: PRListViewModelProtocol {
                 self.preparePRCellViewModels(prList: prList)
                 self.delegate?.reloadTable()
             case .failure(let error):
-                self.delegate?.showError(title: "Error", message: "")
+                self.delegate?.showError(title: "Error", message: error.genericMessgae)
                 self.shouldShowLoadingCell = false
-                break
             }
         }
     }

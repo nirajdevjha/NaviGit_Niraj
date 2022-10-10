@@ -44,7 +44,12 @@ class NetworkManager: NetworkManagerProtocol {
             guard
                 let _ = (response as? HTTPURLResponse)?.statusCode
             else {
-                completion(.failure(.unknown))
+                if let error = error {
+                    completion(.failure(ErrorHandler.getAPIError(error)))
+                }
+                else {
+                    completion(.failure(.unknown))
+                }
                 return
             }
             do {

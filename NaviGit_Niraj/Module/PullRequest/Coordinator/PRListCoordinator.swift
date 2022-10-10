@@ -19,8 +19,14 @@ final class PRListCoordinator: Coordinator {
         let networkManager: NetworkManagerProtocol = NetworkManager()
         let prService: PRServiceProvider = PRService(networkManager: networkManager)
         let viewModel: PRListViewModelProtocol = PRListViewModel(service: prService)
-        let prListVC = PRListViewController(viewModel: viewModel)
+        let prListVC = PRListViewController(viewModel: viewModel, delegate: self)
         self.prListVC = prListVC
         presenter?.pushViewController(prListVC, animated: true)
+    }
+}
+
+extension PRListCoordinator: PRListViewControllerDelegate {
+    func showError(title: String, message: String) {
+        UIAlertController.showAlert(from: prListVC, title: title, message: message)
     }
 }

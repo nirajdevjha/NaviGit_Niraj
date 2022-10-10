@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PRListViewControllerDelegate: AnyObject {
+    func showError(title: String, message: String)
+}
+
 class PRListViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
@@ -26,9 +30,11 @@ class PRListViewController: UIViewController {
     }()
 
     private var viewModel: PRListViewModelProtocol
+    private weak var delegate: PRListViewControllerDelegate?
 
-    init(viewModel: PRListViewModelProtocol) {
+    init(viewModel: PRListViewModelProtocol, delegate: PRListViewControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -121,7 +127,7 @@ extension PRListViewController: PRListViewModelDelegate {
 
     func showError(title: String, message: String) {
         DispatchQueue.main.async {
-            UIAlertController.showAlert(from: self, title: title, message: message)
+            self.delegate?.showError(title: title, message: message)
         }
     }
 }

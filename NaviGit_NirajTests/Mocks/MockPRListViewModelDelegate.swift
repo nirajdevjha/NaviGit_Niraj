@@ -5,7 +5,6 @@
 //  Created by Niraj Jha on 11/10/22.
 //
 
-import XCTest
 @testable import NaviGit_Niraj
 
 class MockPRListViewModelDelegate: PRListViewModelDelegate {

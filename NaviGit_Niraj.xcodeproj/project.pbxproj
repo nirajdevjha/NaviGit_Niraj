@@ -47,6 +47,7 @@
 		D8C8727928F4A3F60096029B /* PRListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727828F4A3F60096029B /* PRListViewModelTests.swift */; };
 		D8C8727C28F4A6DC0096029B /* MockPRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727B28F4A6DC0096029B /* MockPRService.swift */; };
 		D8C8727E28F537410096029B /* MockPRListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727D28F537410096029B /* MockPRListViewModelDelegate.swift */; };
+		D8C8728028F538690096029B /* PRListCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727F28F538690096029B /* PRListCellViewModelTests.swift */; };
 		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		D8C8727828F4A3F60096029B /* PRListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListViewModelTests.swift; sourceTree = "<group>"; };
 		D8C8727B28F4A6DC0096029B /* MockPRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPRService.swift; sourceTree = "<group>"; };
 		D8C8727D28F537410096029B /* MockPRListViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPRListViewModelDelegate.swift; sourceTree = "<group>"; };
+		D8C8727F28F538690096029B /* PRListCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListCellViewModelTests.swift; sourceTree = "<group>"; };
 		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C8727828F4A3F60096029B /* PRListViewModelTests.swift */,
+				D8C8727F28F538690096029B /* PRListCellViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				D8C8726B28F49EE00096029B /* PRServiceTests.swift in Sources */,
 				D8C8727628F4A3190096029B /* MockModel.swift in Sources */,
 				2C3F327428CF920400E8AC44 /* NaviGit_NirajTests.swift in Sources */,
+				D8C8728028F538690096029B /* PRListCellViewModelTests.swift in Sources */,
 				D8C8726928F45FFA0096029B /* PRRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

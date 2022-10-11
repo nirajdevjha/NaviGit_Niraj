@@ -49,7 +49,7 @@ final class PRListViewModel: PRListViewModelProtocol {
             let prCellViewModel = PRListCellViewModel(prInfo: pr)
             prCellViewModels.append(prCellViewModel)
         }
-        shouldShowLoadingCell = currentPage > 1
+        shouldShowLoadingCell = currentPage >= 1
     }
 
 

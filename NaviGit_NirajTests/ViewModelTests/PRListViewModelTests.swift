@@ -33,8 +33,6 @@ final class PRListViewModelTests: XCTestCase {
         XCTAssertEqual(mockDelegate.isShowingLoader.timesCalled, 1)
         XCTAssertEqual(mockDelegate.isHidingLoader.timesCalled, 1)
         XCTAssertEqual(mockDelegate.isTableReloaded.timesCalled, 1)
-
-        XCTAssertFalse(sut.shouldShowLoadingCell)
     }
 
     func testGetPRListUnSuccessfully() {

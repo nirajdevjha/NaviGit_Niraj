@@ -5,7 +5,7 @@
 //  Created by Niraj Jha on 11/10/22.
 //
 
-import Foundation
+@testable import NaviGit_Niraj
 
 struct MockModel {
     var timesCalled: Int = 0

@@ -35,10 +35,13 @@ final class PRListViewModel: PRListViewModelProtocol {
         self.service = service
     }
 
+    /// Creates cell View models
+    /// Disable shouldShowLoadingCell if API returns empty list for a page
+    /// - Parameter prList: `array` denoting PullRequest list
     private func preparePRCellViewModels(prList: [PullRequest]) {
         guard !prList.isEmpty else {
             prCellViewModels.removeAll()
-            //ERROR
+            shouldShowLoadingCell = false
             return
         }
 
@@ -46,12 +49,11 @@ final class PRListViewModel: PRListViewModelProtocol {
             let prCellViewModel = PRListCellViewModel(prInfo: pr)
             prCellViewModels.append(prCellViewModel)
         }
-        //This can be improved for infinite pagination
-        shouldShowLoadingCell = currentPage < 15
+        shouldShowLoadingCell = currentPage > 1
     }
 
-    func getPRList() {
 
+    func getPRList() {
         let request = PullRequestAPIData(category: .closed, owner: "apple", repo: "swift", page: currentPage)
         if currentPage == 1 {
             delegate?.showLoader()

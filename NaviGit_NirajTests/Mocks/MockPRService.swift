@@ -10,7 +10,7 @@
 
 class MockPRService: PRServiceProvider {
 
-    private let isError: Bool
+    var isError: Bool
     private let testError = APIError.noInternet
 
     let testPullRequests: [PullRequest] = [
@@ -18,7 +18,13 @@ class MockPRService: PRServiceProvider {
                     createdAt: "2022-10-10T15:19:19Z",
                     closedAt: "2022-10-10T18:22:05Z",
                     user: UserInfo(login: "User001",
-                                   avatarUrl: "https://avatars.com/123")
+                                   avatarUrl: "https://avatars.com/User001")
+                   ),
+        PullRequest(title: "Use an absolute path",
+                    createdAt: "2022-09-10T15:19:19Z",
+                    closedAt: "2022-09-10T18:22:05Z",
+                    user: UserInfo(login: "User002",
+                                   avatarUrl: "https://avatars.com/User002")
                    )
     ]
 
@@ -32,7 +38,5 @@ class MockPRService: PRServiceProvider {
         } else {
             completion(.success(testPullRequests))
         }
-        return nil
     }
-
 }

@@ -19,9 +19,9 @@ class MockPRListViewModelDelegate: PRListViewModelDelegate {
         isHidingLoader.timesCalled += 1
     }
 
-    var isTableReloading = MockModel()
+    var isTableReloaded = MockModel()
     func reloadTable() {
-        isTableReloading.timesCalled += 1
+        isTableReloaded.timesCalled += 1
     }
 
     var isErrorShown = MockModel()

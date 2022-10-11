@@ -43,11 +43,10 @@
 		D8C8726B28F49EE00096029B /* PRServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8726A28F49EE00096029B /* PRServiceTests.swift */; };
 		D8C8726F28F49FC80096029B /* pullRequestsInValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D8C8726D28F49FC70096029B /* pullRequestsInValidResponse.json */; };
 		D8C8727028F49FC80096029B /* pullRequestsValidResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D8C8726E28F49FC70096029B /* pullRequestsValidResponse.json */; };
-		D8C8727428F4A3020096029B /* MockPRListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727328F4A3020096029B /* MockPRListViewModelDelegate.swift */; };
 		D8C8727628F4A3190096029B /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727528F4A3190096029B /* MockModel.swift */; };
-		D8C8727728F4A3D70096029B /* MockPRListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727328F4A3020096029B /* MockPRListViewModelDelegate.swift */; };
 		D8C8727928F4A3F60096029B /* PRListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727828F4A3F60096029B /* PRListViewModelTests.swift */; };
 		D8C8727C28F4A6DC0096029B /* MockPRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727B28F4A6DC0096029B /* MockPRService.swift */; };
+		D8C8727E28F537410096029B /* MockPRListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8727D28F537410096029B /* MockPRListViewModelDelegate.swift */; };
 		D8D8463E28EA0DF200992256 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,10 +108,10 @@
 		D8C8726A28F49EE00096029B /* PRServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRServiceTests.swift; sourceTree = "<group>"; };
 		D8C8726D28F49FC70096029B /* pullRequestsInValidResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pullRequestsInValidResponse.json; path = ../../../../../Desktop/pullRequestsInValidResponse.json; sourceTree = "<group>"; };
 		D8C8726E28F49FC70096029B /* pullRequestsValidResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pullRequestsValidResponse.json; path = ../../../../../Desktop/pullRequestsValidResponse.json; sourceTree = "<group>"; };
-		D8C8727328F4A3020096029B /* MockPRListViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPRListViewModelDelegate.swift; sourceTree = "<group>"; };
 		D8C8727528F4A3190096029B /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		D8C8727828F4A3F60096029B /* PRListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRListViewModelTests.swift; sourceTree = "<group>"; };
 		D8C8727B28F4A6DC0096029B /* MockPRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPRService.swift; sourceTree = "<group>"; };
+		D8C8727D28F537410096029B /* MockPRListViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPRListViewModelDelegate.swift; sourceTree = "<group>"; };
 		D8D8463D28EA0DF200992256 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -305,9 +304,9 @@
 			isa = PBXGroup;
 			children = (
 				D8C8726628F45C340096029B /* MockNetworkManager.swift */,
-				D8C8727328F4A3020096029B /* MockPRListViewModelDelegate.swift */,
 				D8C8727528F4A3190096029B /* MockModel.swift */,
 				D8C8727B28F4A6DC0096029B /* MockPRService.swift */,
+				D8C8727D28F537410096029B /* MockPRListViewModelDelegate.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -519,8 +518,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C8726728F45C340096029B /* MockNetworkManager.swift in Sources */,
+				D8C8727E28F537410096029B /* MockPRListViewModelDelegate.swift in Sources */,
 				D8C8727928F4A3F60096029B /* PRListViewModelTests.swift in Sources */,
-				D8C8727428F4A3020096029B /* MockPRListViewModelDelegate.swift in Sources */,
 				D8C8727C28F4A6DC0096029B /* MockPRService.swift in Sources */,
 				D8C8726B28F49EE00096029B /* PRServiceTests.swift in Sources */,
 				D8C8727628F4A3190096029B /* MockModel.swift in Sources */,
@@ -535,7 +534,6 @@
 			files = (
 				2C3F328028CF920400E8AC44 /* NaviGit_NirajUITestsLaunchTests.swift in Sources */,
 				2C3F327E28CF920400E8AC44 /* NaviGit_NirajUITests.swift in Sources */,
-				D8C8727728F4A3D70096029B /* MockPRListViewModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
